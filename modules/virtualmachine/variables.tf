@@ -1,9 +1,3 @@
-variable "location" {
-  description = "The AWS region where resources will be created"
-  type        = string
-  default     = "us-east-1"
-}
-
 variable "environment" {
   description = "The environment for which resources are being created (e.g., dev, staging, prod)"
   type        = string
@@ -14,4 +8,22 @@ variable "asset_name" {
   description = "The name of the asset being created"
   type        = string
   default     = "chris-vm"
+}
+
+variable "size" {
+  description = "The size of the virtual machine"
+  type        = string
+  default     = "Standard_DS1_v2"
+}
+
+variable "admin_username" {
+  description = "The administrator username for the virtual machine"
+  type        = string
+  default     = "azureuser"
+}
+
+variable "admin_password" {
+  description = "The administrator password for the virtual machine"
+  type        = string
+  default     = "P@ssw0rd!"
 }
