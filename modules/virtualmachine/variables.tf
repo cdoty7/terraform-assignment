@@ -27,3 +27,14 @@ variable "admin_password" {
   type        = string
   default     = "P@ssw0rd!"
 }
+
+variable "resource_group_name" {
+  description = "The name of the resource group where the virtual machine will be created"
+  type        = string
+}
+
+variable "location" {
+  description = "The Azure region where resources will be created"
+  type        = string
+  default     = "East US"
+}

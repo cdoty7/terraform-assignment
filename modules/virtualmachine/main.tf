@@ -25,3 +25,18 @@ locals {
       disable_password_authentication = false
     }
   }
+
+  resource "azurerm_network_interface" "nic" {
+  name                = "${var.asset_name}-${var.environment}-nic"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  ip_configuration {
+    name                          = "internal"
+    private_ip_address_allocation = "Dynamic"
+  }
+
+  tags = {
+    environment = var.environment
+  }
+}

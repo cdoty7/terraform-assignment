@@ -11,14 +11,31 @@ variable "environment" {
   
 }
 
-variable "asset_name" {
-  description = "The name of the asset being created"
+variable "virtual_network_name" {
+  description = "The name of the virtual network being created"
   type        = string
-  default     = "my-asset"
+  default     = "chris-vnet"
 }
 
 variable "resource_group_name" {
   description = "The name of the resource group where the virtual network will be created"
   type        = string
-  default     = "my-resource-group"
+}
+
+variable "location" {
+  description = "The Azure region where resources will be created"
+  type        = string
+  default     = "East US"
+}
+
+variable "subnet_address_prefix" {
+  description = "The address prefix for the subnet within the virtual network"
+  type        = string
+  default     = "10.0.1.0/24"
+}
+
+variable "subnet_id" {
+  description = "The ID of the subnet where the virtual machine will be deployed."
+  type        = list(string)
+  default     = ["chris-subnet1", "chris-subnet2"]
 }

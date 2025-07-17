@@ -9,3 +9,26 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
+
+variable "administrator_login" {
+  description = "The administrator login for the Azure SQL server."
+  type        = string
+  default     = "sqladmin"
+}
+
+variable "administrator_login_password" {
+  description = "The password for the administrator login."
+  type        = string
+  default     = "P@ssw0rd!"
+}
+
+variable "resource_group_name" {
+  description = "The name of the resource group where the Azure SQL server will be created."
+  type        = string
+}
+
+variable "location" {
+  description = "The Azure region where the Azure SQL server will be created."
+  type        = string
+  default     = "East US"
+}
