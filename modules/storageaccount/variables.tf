@@ -8,7 +8,7 @@ variable "environment" {
 variable "storage_account_name" {
   description = "The name of the storage account being created"
   type        = string
-  default     = "chrisstorageaccount"
+  default     = "chrisstorageaccount2"
 }
 
 variable "account_tier" {
@@ -37,11 +37,17 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure region where resources will be created"
   type        = string
-  default     = "East US"
+  default     = "West US"
 }
 
 variable "storage_containers" {
   description = "A list of storage container names to be created."
   type        = list(string)
   default     = ["container1"]
+}
+
+variable "asset_name" {
+  description = "The asset name to be used in resource naming"
+  type        = string
+  default     = "christerraform"
 }

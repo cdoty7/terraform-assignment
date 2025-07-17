@@ -10,13 +10,13 @@ variable "environment" {
   default     = "dev"
 }
 
-variable "administrator_login" {
+variable "admin_username" {
   description = "The administrator login for the Azure SQL server."
   type        = string
   default     = "sqladmin"
 }
 
-variable "administrator_login_password" {
+variable "admin_password" {
   description = "The password for the administrator login."
   type        = string
   default     = "P@ssw0rd!"
@@ -30,5 +30,5 @@ variable "resource_group_name" {
 variable "location" {
   description = "The Azure region where the Azure SQL server will be created."
   type        = string
-  default     = "East US"
+  default     = "West US"
 }

@@ -1,6 +1,6 @@
 
 resource "azurerm_storage_account" "storage" {
-  name                     = var.storage_account_name
+  name                     = format("%s%s", var.asset_name, var.environment)
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = var.account_tier
@@ -16,4 +16,5 @@ resource "azurerm_storage_container" "this" {
   storage_account_id = azurerm_storage_account.storage.id
   name                  = each.value
   container_access_type = "private"
+  depends_on = [ azurerm_storage_account.storage ]
 }
